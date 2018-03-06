@@ -15,20 +15,15 @@
     </head>
     <body>
         <div>
-            <h1><a href="">Glorious Land</a></h1>
+            <h1><a href="/">Glorious Land</a></h1>
         </div>
 
-        <div>
-            <p>published: 20.02.2018, 23:00</p>
-            <h2><a href="">First post</a></h2>
-            <p>Просування українського в світ.</p>
-        </div>
-
-        <div>
-            <p>published: 20.02.2018, 23:00</p>
-            <h2><a href="">Second post</a></h2>
-            <p>Просування українського в світ 2.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
-
